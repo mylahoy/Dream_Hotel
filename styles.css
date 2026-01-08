@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+:root{
+  --accent:#b98cff; /* pastel violet */
+  --accent-2:#ffd1dc; /* pastel pink */
+  --muted:#94a3b8; /* soft slate */
+  --hero1:#fff7ed; /* pale peach */
+  --hero2:#f0fbff; /* pale sky */
+}
+:root{
+  --bg:#060608; /* page background */
+  --surface:#0f0f18; /* panels */
+  --text:#f6f5ff; /* main text (soft white) */
+  --muted:#bfb8e8; /* soft muted purple */
+  --accent:#8a2be2; /* vibrant purple (blueviolet) */
+  --accent-2:#5b21b6; /* deep purple */
+  --hero1:#07030b; /* dark purple black */
+  --hero2:#12021a;
+}
+
+/* Base layout */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family:'Poppins', Segoe UI, Arial, Helvetica, sans-serif;margin:0;color:var(--text);background:var(--bg);line-height:1.5;display:flex;flex-direction:column;align-items:center;min-height:100vh;text-align:center}
+.container{max-width:1100px;margin:0 auto;padding:1rem;text-align:center;display:flex;flex-direction:column;align-items:center}
+
+/* Headings */
+h1,h2,h3{font-family:'Playfair Display', serif;margin:.25rem 0;font-weight:700;color:var(--accent)}
+h1{font-size:3rem;line-height:1.05;margin-top:0.25rem;margin-bottom:0.5rem;font-weight:800}
+h2{font-size:2rem;line-height:1.15;margin-top:0.5rem;margin-bottom:0.5rem;font-weight:700}
+h3{font-size:1.25rem;line-height:1.25;margin-top:0.5rem;margin-bottom:0.5rem;font-weight:700}
+
+/* Lead and paragraphs */
+p{max-width:800px;margin:0.5rem auto}
+p{max-width:800px;margin:0.5rem auto}
+
+/* Header & nav */
+.site-header{background:var(--surface);border-bottom:1px solid #222;width:100%}
+.header-inner{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;position:relative}
+.logo{position:static;left:auto;transform:none;font-size:2.25rem;font-weight:800;letter-spacing:0.5px;color:var(--accent)}
+.nav{display:flex;gap:1rem;justify-content:center}
+.nav a{font-weight:700;color:var(--muted);text-decoration:none}
+.nav a:hover{color:var(--accent)}
+.nav a:focus{outline:none;text-decoration:underline;color:var(--accent-2)}
+.nav-toggle{display:none;background:none;border:0;font-size:1.25rem}
+
+/* Hero */
+.hero{background:linear-gradient(120deg,var(--hero1),var(--hero2));padding:3rem 0;text-align:center;display:flex;align-items:center;justify-content:center;min-height:60vh}
+
+/* Buttons */
+.btn{display:inline-block;padding:0.6rem 1rem;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;border-radius:8px;text-decoration:none}
+
+/* Features & gallery */
+.features{display:flex;gap:1rem;padding:2rem 0;align-items:stretch}
+.feature{flex:1;background:#111;padding:1rem;border-radius:8px;text-align:center;display:flex;flex-direction:column;justify-content:center;border:1px solid rgba(138,43,226,0.08);box-shadow:0 6px 18px rgba(91,33,182,0.04)}
+.gallery{width:100%}
+.gallery .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.75rem;align-items:center;justify-items:center}
+.gallery img{display:block;max-width:100%;width:auto;height:auto;border-radius:8px;object-fit:cover;margin:0 auto}
+.room{border-bottom:1px solid #eee;padding:1rem 0;display:flex;flex-direction:column;align-items:center;text-align:center}
+
+/* Contact form */
+.contact-form{display:flex;flex-direction:column;align-items:center}
+.contact-form input,.contact-form textarea{max-width:560px;text-align:left;width:100%;padding:0.6rem;border:1px solid #333;border-radius:6px;background:#0b0b0b;color:var(--text)}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;box-shadow:0 0 0 3px rgba(138,43,226,0.12);border-color:var(--accent)}
+
+/* Footer */
+.site-footer{background:var(--surface);padding:1rem 0;margin-top:2rem;width:100%;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+
+/* Global centering for main */
+main{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%}
+
+/* Contact page specific */
+.contact-page{min-height:calc(100vh - 200px);display:flex;align-items:center;justify-content:center;padding:2rem 1rem}
+.contact-page > *{width:100%;max-width:760px}
+.contact-form{width:100%;max-width:560px}
+.contact-page p{margin-bottom:1rem}
+
+/* Responsive */
+@media (max-width:800px){
+  .features{flex-direction:column}
+  .gallery .grid{grid-template-columns:repeat(1,1fr);width:100%}
+}
+
+@media (max-width:600px){
+  .nav{display:none}
+  .nav-toggle{display:block}
+  .nav.open{display:flex;flex-direction:column;gap:0.5rem;align-items:center;margin-top:0.5rem}
+  .nav.open a{padding:0.5rem 0}
+  .logo{font-size:1.25rem}
+}
